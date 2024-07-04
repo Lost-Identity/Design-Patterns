@@ -40,8 +40,8 @@ public class TicTacToeGame {
 
             //get the free space from the board
             gameBoard.printBoard();
-            Map<Integer, Integer> freespaces = gameBoard.getFreeCells();
-            if(freespaces.isEmpty()){
+            Map<Integer, Integer> freeSpaces = gameBoard.getFreeCells();
+            if(freeSpaces.isEmpty()){
                 noWinner = false;
                 continue;
             }
@@ -81,31 +81,35 @@ public class TicTacToeGame {
         //need to check in row
         for(int i = 0; i< gameBoard.size; i++){
 
-            if(gameBoard.board[row][i] == null || gameBoard.board[row][i].pieceType != pieceType){
+            if (gameBoard.board[row][i] == null || gameBoard.board[row][i].pieceType != pieceType) {
                 rowMatch = false;
+                break;
             }
         }
 
         //need to check in column
         for(int i = 0; i< gameBoard.size; i++){
 
-            if(gameBoard.board[i][column] == null || gameBoard.board[i][column].pieceType != pieceType){
+            if (gameBoard.board[i][column] == null || gameBoard.board[i][column].pieceType != pieceType) {
                 columnMatch = false;
+                break;
             }
         }
 
         //need to check diagonals
         for(int i = 0, j = 0; i< gameBoard.size; i++, j++){
-            if(gameBoard.board[i][j] == null || gameBoard.board[i][j].pieceType != pieceType){
+            if (gameBoard.board[i][j] == null || gameBoard.board[i][j].pieceType != pieceType) {
                 diagonalMatch = false;
+                break;
             }
         }
 
-        //need to check antidiagonal
+        //need to check anti-diagonal
         //need to check diagonals
         for(int i = 0, j = gameBoard.size - 1; i< gameBoard.size; i++, j--){
-            if(gameBoard.board[i][j] == null || gameBoard.board[i][j].pieceType != pieceType){
+            if (gameBoard.board[i][j] == null || gameBoard.board[i][j].pieceType != pieceType) {
                 antiDiagonalMatch = false;
+                break;
             }
         }
 

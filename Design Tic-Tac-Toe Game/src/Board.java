@@ -1,8 +1,7 @@
 import model.PlayingPiece;
 
-import java.util.ArrayList;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 
@@ -26,7 +25,7 @@ public class Board {
     }
 
     public Map<Integer, Integer> getFreeCells(){
-        Map<Integer, Integer> freeCells = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> freeCells = new HashMap<>();
 
         for(int i = 0; i < size ; i++){
             for(int j = 0; j < size; j++){
@@ -42,10 +41,10 @@ public class Board {
         for(int i = 0; i < size; i++){
             for(int j = 0; j < size; j++){
                 if(board[i][j] != null){
-                    System.out.print(board[i][j].pieceType.name() + "    ");
+                    System.out.print(board[i][j].pieceType.name() + "   ");
                 }
                 else {
-                    System.out.print("  ");
+                    System.out.print("    ");
                 }
                 System.out.print(" | ");
             }
